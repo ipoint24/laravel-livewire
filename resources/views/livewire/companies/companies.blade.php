@@ -16,16 +16,19 @@
         {{ Auth::user()->roles->pluck('name') }}
     </div>
         <!-- Test -->
-        <x-input.select2multiple wire:model="selectedTenants" id="selectedTenants" name="selectedTenants[]"
-                                 :options="$tenants" select-type="label"/>
+
         <!-- Ende Test -->
         <button wire:click="create()"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10">
             Create New Company
         </button>
         <p>
-            @livewire('helpers.search-filter',['model' => 'App\Models\Company','searchField' => 'name'])
+            @livewire('helpers.search-filter',['model' => 'App\Models\Company','searchField' => 'title'])
         </p>
+        <!--
+        <x-input.select2multiple wire:model="selectedTenants" id="selectedTenants" name="selectedTenants[]"
+                                 :options="$tenants" select-type="label"/>
+         -->
         @if (count($companies)>0)
         <div class="py-10">
             <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">

@@ -1,10 +1,11 @@
 <!-- script -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @livewireScripts
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 @stack('modals')
 @yield('scripts')
 @stack('scripts')
+
 <script src="{{url('js/output.js')}}"></script>
 <script src="{{url('js/custom.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -37,5 +38,6 @@
     });
 </script>
 <!-- end script -->
+
 
 

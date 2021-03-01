@@ -7,11 +7,11 @@ use Log;
 
 class SearchFilter extends Component
 {
-    public $query; // Searchterm
+    public $searchTerm = '';
     public $options = [];
-    public $highlightIndex;
-    public $model;
-    public $listenerName;
+    public $highlightIndex = 0;
+    public $model = '';
+    public $listenerName = '';
     public $searchField = '';
 
     public function mount()
@@ -21,7 +21,7 @@ class SearchFilter extends Component
 
     public function resetValues()
     {
-        $this->query = '';
+        $this->searchTerm = '';
         $this->options = [];
         $this->highlightIndex = 0;
     }
@@ -55,14 +55,15 @@ class SearchFilter extends Component
         if ($option) {
             // $this->redirect(route('show-contact', $contact['id']));
             // Emit to listener id
+            // aus Blade  wire:click="$emit('orderSelected',{{$order->id}})"
             $this->emit('alert', ['type' => "success", 'message' => "Option:" . $option, 'title' => 'Title']);
         }
     }
 
-    public function updatedQuery()
+    public function updatedSearchTerm()
     {
-        Log::info($this->model);
-        $this->options = $this->model::where($this->searchField, 'like', '%' . $this->query . '%')
+        Log::info("SearchTerm updated");
+        $this->options = $this->model::where($this->searchField, 'like', '%' . $this->searchTerm . '%')
             ->get();
     }
 }
