@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Charts\LoginChart;
 use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
+use ConsoleTVs\Charts\Registrar as Charts;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,10 +22,14 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
+     * @param Charts $charts
      * @return void
      */
-    public function boot()
+    public function boot(Charts $charts)
     {
         Carbon::setLocale(config('app.locale'));
+        $charts->register([
+            LoginChart::class
+        ]);
     }
 }

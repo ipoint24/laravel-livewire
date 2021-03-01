@@ -20,6 +20,9 @@
 
     <!-- Scripts -->
     <script src="{{ url(mix('js/app.js')) }}" defer></script>
-
+    <!-- Charting library -->
+    <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+    <!-- Chartisan -->
+    <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
 
 </head>

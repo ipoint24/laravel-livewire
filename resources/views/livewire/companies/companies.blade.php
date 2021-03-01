@@ -23,6 +23,9 @@
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10">
             Create New Company
         </button>
+        <p>
+            @livewire('helpers.search-filter',['model' => 'App\Models\Company','searchField' => 'name'])
+        </p>
         @if (count($companies)>0)
         <div class="py-10">
             <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">

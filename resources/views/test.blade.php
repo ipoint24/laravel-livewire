@@ -4,8 +4,27 @@
     <!-- Base-Section -->
     <x-section.base>
         Test
-
     </x-section.base>
+    <div class="py-12">
+        <div class="report-card">
+            <div class="card">
+                <div class="card-body flex flex-col">
+
+                    <!-- top -->
+                    <div class="flex flex-row justify-between ">
+                        <div class="h6 px-2">Logins Last 3 Hours</div>
+                    </div>
+
+                    <!-- end top -->
+
+                    <!-- bottom -->
+                    <div class="mt-8">
+                        <x-charts.login-chart/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="py-12">
         <div class="report-card">
             <div class="card">

@@ -11,8 +11,9 @@ class ImpersonationController extends Controller
 {
     public function leave(Request $request)
     {
-        // logout of current
-        // login as super-admin
+        if (!auth()->user()->hasRole(3)) {
+            abort(403);
+        }
         if (!session()->has('impersonate')) {
             abort(403);
         }

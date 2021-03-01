@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use App\Http\Traits\DateTimeTrait;
+use App\Traits\DateTimeTrait;
 use Illuminate\Support\Facades\Storage;
 
 class Comment extends Model
