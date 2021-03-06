@@ -1,4 +1,8 @@
 <div>
+    Select with Alpine:<br>
+    <x-input.selectalp3/>
+    <br>
+    <hr>
     @if($orderId>0)
         @if($activeProduct > 0)
         <button wire:click="addProduct()"
